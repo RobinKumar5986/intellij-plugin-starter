@@ -1,0 +1,34 @@
+<idea-plugin>
+    <id>com.codeWithRk.TtfFileReader</id>
+    <name>Hello World Plugin</name>
+    <version>1.0-SNAPSHOT</version>
+    <vendor email="N/A">Robin Kumar</vendor>
+
+    <description>
+        A simple hello world plugin.
+    </description>
+
+    <!-- ✅ Specify IntelliJ compatibility -->
+    <idea-version since-build="211" until-build="241.*"/>
+
+    <!-- ✅ Declare dependencies -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- ✅ Declare startup activity -->
+        <postStartupActivity implementation="com.intelij.pluginStarter.MyStartupListener"/>
+
+        <!-- ✅ Declare a notification group -->
+        <notificationGroup id="My Plugin Notifications" displayType="BALLOON"/>
+    </extensions>
+
+    <!-- ✅ Register a menu action -->
+    <actions>
+        <action id="com.intelij.pluginStarter.HelloWorldAction"
+                class="com.intelij.pluginStarter.HelloWorldAction"
+                text="Say Hello"
+                description="Shows a Hello World message">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
